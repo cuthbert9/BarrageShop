@@ -9,9 +9,9 @@ const app = () => {
         <ImageBackground
         source={Barage}
         resizeMode='cover'
-        style={{height:"100%",width:"auto"}}
+        style={{height:"100%",width:"auto",justifyContent:"center"}}
         >
-        <Text style={style.text}>Barrage Shop</Text> 
+        <Text style={style.text}>Barrage Shop</Text>  
 
       
         <Link href='/contact' asChild >
@@ -34,13 +34,15 @@ const style=StyleSheet.create({
     container:{
       flex:1,
       flexDirection:'column',
+      
 
     },
     text:{
       color:"white",
       fontSize:30,
       textAlign:"center",
-      fontWeight:"bold"
+      fontWeight:"bold",
+      margin:20
       
     },
     Btntext:{
@@ -55,7 +57,8 @@ const style=StyleSheet.create({
       backgroundColor:"rgba(0,0,0,0.65)",
       padding:5,
       borderRadius:30,
-      marginHorizontal:50
+      marginHorizontal:50,
+      
     
       
 
