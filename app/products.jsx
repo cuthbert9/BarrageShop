@@ -29,21 +29,32 @@ const products = () => {
   return (
     <Container style={styles.container} >         
       <Text style={styles.text} >Choose Your Barrage</Text>
-        <View>
-            <View>
-                <Text style={styles.text}>{shouseList.nikeShoes[1].name}</Text>
-                <Text></Text>
-            </View>
+
+      <FlatList
+      data={shouseList.nikeShoes}  
+      keyExtractor={(item)=>item.id.toString()}
+      renderItem={({item})=>(
+        <View  style={styles.List}>
+           
             <Image
-            source={NikeImages[2]}
-            
+            source={NikeImages[item.id-1]}   
+            style={styles.image}
             />
 
+            <View  style={styles.ListHeading}>
+                <Text style={styles.shouTitle}>{item.name}</Text>
+
+                <View style={styles.subHeadin} >
+                <Text  style={styles.shouTitle}>{item.price}$</Text>
+                <Text  style={styles.shouTitle}>{item.releaseYear}</Text>
+
+
+                </View>
+            </View>
 
         </View>
-
-
-    
+      )}      
+      />    
 
     </Container>
     
@@ -57,14 +68,44 @@ const createStylesheet=(theme,colorTheme)=>{
     return StyleSheet.create({
         container:{
             flex:1,
-            backgroundColor:theme.background,
+            backgroundColor:theme.background  ,
+                   
            
         },
         text:{
             color:theme.text,
             fontSize:30,
-            textAlign:"center"
+            textAlign:"center" ,
+            margin:5           
+        },
+        shouTitle:{
+            color:theme.text,
+            fontSize:20,
+            textAlign:"center"            
+        },
+        image:{
+           width:"100%",
+           height:300 ,  
+           margin:"auto",
+           borderRadius:20         
+        },
+        List:{
+            flexDirection:"column",            
+            borderWidth:3,
+            borderColor:"white",
+            borderRadius:20,
+            margin:10
+           
             
+        },
+        ListHeading:{
+            flexDirection:"column"
+
+        },
+        subHeadin:{
+            flexDirection:"row",
+            margin:"auto",
+            gap:30
         }
        
          
