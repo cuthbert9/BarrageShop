@@ -11,7 +11,15 @@ const app = () => {
         resizeMode='cover'
         style={{height:"100%",width:"auto",justifyContent:"center"}}
         >
-        <Text style={style.text}>Barrage Shop</Text>  
+        <Text style={style.text}>Barrage Shop!! Welcom</Text>  
+
+        <Link href='/products' asChild >
+              <Pressable style={style.btn}>
+                    <Text style={style.Btntext}>
+                       Buy Barrage
+                    </Text>
+              </Pressable>     
+          </Link>
 
       
         <Link href='/contact' asChild >
@@ -21,7 +29,7 @@ const app = () => {
                     </Text>
               </Pressable>     
           </Link>
-        
+         
         </ImageBackground>
       
     </View>
@@ -42,7 +50,8 @@ const style=StyleSheet.create({
       fontSize:30,
       textAlign:"center",
       fontWeight:"bold",
-      margin:20
+      margin:20  
+
       
     },
     Btntext:{
@@ -50,6 +59,7 @@ const style=StyleSheet.create({
       fontSize:30,
       textAlign:"center",
       fontWeight:"bold",
+      
      
       
     },
@@ -58,6 +68,7 @@ const style=StyleSheet.create({
       padding:5,
       borderRadius:30,
       marginHorizontal:50,
+      margin:10
       
     
       

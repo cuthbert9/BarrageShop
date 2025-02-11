@@ -3,7 +3,7 @@ import React from 'react'
 
 const contact = () => {
   return (
-    <View style={{margin:30}}>
+    <View style={{backgroundColor:"black",width:"auto",height:"100%"}}>
       <Text style={styles.text}>Contact Nike Store</Text>
     </View>
   )
@@ -15,7 +15,8 @@ const styles=StyleSheet.create({
     text:{
       color:"white",
       fontSize:30,
-      fontWeight:"bold"
+      fontWeight:"bold",
+      margin:30
     }
 
 })
