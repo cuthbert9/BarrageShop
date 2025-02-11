@@ -10,8 +10,8 @@ import barrage9 from '@/assets/images/barrage5.jpg'
 import barrage10 from '@/assets/images/barrage6.jpg'
 
 
-export default {
-    barrage1,
+export default 
+  [  barrage1,
     barrage2,
     barrage3,
     barrage4,
@@ -20,6 +20,5 @@ export default {
     barrage7,
     barrage8,
     barrage9,
-    barrage10,
+    barrage10]
 
-}

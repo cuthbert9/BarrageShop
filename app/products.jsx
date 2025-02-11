@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { Platform } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import { FlatList } from 'react-native'
-import {shouseList} from '@/constants/NikesList'
+import shouseList from '@/constants/NikesList'
 import NikeImages from '@/constants/NikesImages'
 import barra from '@/assets/images/barage1.jpg'
 
@@ -20,6 +20,9 @@ const products = () => {
    const styles=createStylesheet(theme,colorTheme);
 
 
+   console.log(shouseList);
+
+
 
 
 
@@ -28,11 +31,11 @@ const products = () => {
       <Text style={styles.text} >Choose Your Barrage</Text>
         <View>
             <View>
-                <Text></Text>
+                <Text style={styles.text}>{shouseList.nikeShoes[1].name}</Text>
                 <Text></Text>
             </View>
             <Image
-            
+            source={NikeImages[2]}
             
             />
 

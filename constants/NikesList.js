@@ -12,7 +12,7 @@ const nikeShoes = [
   ];
   
 
-  export default {
+  export default  {
     nikeShoes
   }
   
