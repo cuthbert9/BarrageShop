@@ -32,9 +32,9 @@ export default function RootLayout() {
   }
 
   return (
-      <Stack  screenOptions={{headerStyle:{backgroundColor:theme.headerBackground},headerTintColor:theme.text}} >
+      <Stack  screenOptions={{headerStyle:{backgroundColor:theme.headerBackground},headerTintColor:theme.text,headerShadowVisible:false}} >
         {/* <Stack.Screen name="(barrage)" options={{title:"Home", headerShown: true ,headerTitleAlign:"center"}}>*/}
-        <Stack.Screen name="index" options={ {title:"Home", headerShown: true}} />
+        <Stack.Screen name="index" options={ {title:"Home", headerShown: true,headerTitleAlign:"center"}} />
         <Stack.Screen name="contact" options={{title:"contact us", headerShown: true }} />
         <Stack.Screen name="products" options={{title:"Our Products", headerShown: true }} />
         <Stack.Screen name="+not-found"  options={{headerShown:false}}/>

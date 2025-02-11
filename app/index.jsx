@@ -11,7 +11,7 @@ const app = () => {
         resizeMode='cover'
         style={{height:"100%",width:"auto",justifyContent:"center"}}
         >
-        <Text style={style.text}>Barrage Shop!! Welcom</Text>  
+        <Text style={style.text}>Barrage Shop!! Welcome</Text>  
 
         <Link href='/products' asChild >
               <Pressable style={style.btn}>
