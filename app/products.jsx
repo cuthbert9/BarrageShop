@@ -1,4 +1,4 @@
-import { View, Text,StyleSheet,Image } from 'react-native'
+import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import { Appearance } from 'react-native'
 import { Colors } from '@/constants/Colors'
@@ -8,107 +8,106 @@ import { ScrollView } from 'react-native-gesture-handler'
 import { FlatList } from 'react-native'
 import shouseList from '@/constants/NikesList'
 import NikeImages from '@/constants/NikesImages'
-import barra from '@/assets/images/barage1.jpg'
 
 const products = () => {
 
-    const Container=Platform.OS==="web"?ScrollView:SafeAreaView;
+    const Container = Platform.OS === "web" ? ScrollView : SafeAreaView;
 
-    const colorTheme=Appearance.getColorScheme();
-    const theme=colorTheme==="dark"?Colors.dark:Colors.light;  
+    const colorTheme = Appearance.getColorScheme();
+    const theme = colorTheme === "dark" ? Colors.dark : Colors.light;
 
-   const styles=createStylesheet(theme,colorTheme);
+    const styles = createStylesheet(theme, colorTheme);
 
-
-   console.log(shouseList);
-
-
+    const FooterComp = <Text style={styles.textFooter}>LIST END</Text>
+    const emptyComp = <Text style={styles.textFooter}>No items</Text>
 
 
+    return (
+        <Container style={styles.container} >
+            <Text style={styles.text} >Choose Your Barrage</Text>
 
-  return (
-    <Container style={styles.container} >         
-      <Text style={styles.text} >Choose Your Barrage</Text>
+            <FlatList
+                data={shouseList.nikeShoes}
+                keyExtractor={(item) => item.id.toString()}
+                ListFooterComponent={FooterComp}
+                ListEmptyComponent={emptyComp}
+                renderItem={({ item }) => (
+                    <View style={styles.List}>
 
-      <FlatList
-      data={shouseList.nikeShoes}  
-      keyExtractor={(item)=>item.id.toString()}
-      renderItem={({item})=>(
-        <View  style={styles.List}>
-           
-            <Image
-            source={NikeImages[item.id-1]}   
-            style={styles.image}
+                        <Image
+                            source={NikeImages[item.id - 1]}
+                            style={styles.image}
+                        />
+
+                        <View style={styles.ListHeading}>
+                            <Text style={styles.shouTitle}>{item.name}</Text>
+
+                            <View style={styles.subHeadin} >
+                                <Text style={styles.shouTitle}>{item.price}$</Text>
+                                <Text style={styles.shouTitle}>{item.releaseYear}</Text>
+
+
+                            </View>
+                        </View>
+
+                    </View>
+                )}
             />
 
-            <View  style={styles.ListHeading}>
-                <Text style={styles.shouTitle}>{item.name}</Text>
+        </Container>
 
-                <View style={styles.subHeadin} >
-                <Text  style={styles.shouTitle}>{item.price}$</Text>
-                <Text  style={styles.shouTitle}>{item.releaseYear}</Text>
-
-
-                </View>
-            </View>
-
-        </View>
-      )}      
-      />    
-
-    </Container>
-    
-  )
+    )
 }
 
 export default products
 
-const createStylesheet=(theme,colorTheme)=>{
+const createStylesheet = (theme, colorTheme) => {
 
     return StyleSheet.create({
-        container:{
-            flex:1,
-            backgroundColor:theme.background  ,
-                   
-           
-        },
-        text:{
-            color:theme.text,
-            fontSize:30,
-            textAlign:"center" ,
-            margin:5           
-        },
-        shouTitle:{
-            color:theme.text,
-            fontSize:20,
-            textAlign:"center"            
-        },
-        image:{
-           width:"100%",
-           height:300 ,  
-           margin:"auto",
-           borderRadius:20         
-        },
-        List:{
-            flexDirection:"column",            
-            borderWidth:3,
-            borderColor:"white",
-            borderRadius:20,
-            margin:10
-           
-            
-        },
-        ListHeading:{
-            flexDirection:"column"
+        container: {
+            flex: 1,
+            backgroundColor: theme.background,
+
 
         },
-        subHeadin:{
-            flexDirection:"row",
-            margin:"auto",
-            gap:30
+        text: {
+            color: theme.text,
+            fontSize: 30,
+            textAlign: "center",
+            margin: 5
+        }, textFooter: {
+            color: theme.text,
+            fontSize: 15,
+            textAlign: "center",
+            margin: 5,
+            fontFamily: "cursive"
+        },
+        shouTitle: {
+            color: theme.text,
+            fontSize: 20,
+            textAlign: "center"
+        },
+        image: {
+            width: "100%",
+            height: 300,
+            margin: "auto",
+            borderRadius: 20
+        },
+        List: {
+            flexDirection: "column",
+            borderWidth: 3,
+            borderColor: "white",
+            borderRadius: 20,
+            margin: 10
+        },
+        ListHeading: {
+            flexDirection: "column"
+
+        },
+        subHeadin: {
+            flexDirection: "row",
+            margin: "auto",
+            gap: 30
         }
-       
-         
-
     })
 }
