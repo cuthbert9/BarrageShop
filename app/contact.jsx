@@ -14,7 +14,7 @@ const contact = () => {
 
       <View style={styles.ContactHead}>
       <Text style={styles.text}>Contact Us</Text>
-      <AntDesign name="contacts" size={24} color="white" />
+      <AntDesign name="contacts" size={30} color="white" />
       </View>
 
       <View  style={styles.contactWrap}>
