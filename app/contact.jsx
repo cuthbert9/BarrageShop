@@ -1,6 +1,7 @@
 import { View, Text,StyleSheet,Image } from 'react-native'
 import React from 'react'
 import barrage from '@/assets/images/barrage7.jpeg'
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 const contact = () => {
   return (
@@ -10,7 +11,12 @@ const contact = () => {
         style={styles.image}
       />
 
+
+      <View style={styles.ContactHead}>
       <Text style={styles.text}>Contact Us</Text>
+      <AntDesign name="contacts" size={24} color="white" />
+      </View>
+
       <View  style={styles.contactWrap}>
       <Text  style={styles.textcontact}> Email📩:CathbertJohnson9@gmail.com</Text>
       <Text  style={styles.textcontact}> Phone☎️:+255620218477</Text>
@@ -29,7 +35,7 @@ const styles=StyleSheet.create({
     color:"white",
     fontSize:25,
     fontWeight:"bold",
-    margin:20,
+    marginVertical:20,
     textAlign:"center"
   },  textcontact:{
     color:"white",
@@ -45,7 +51,12 @@ const styles=StyleSheet.create({
         flexDirection:"column",
         marginHorizontal:"auto",
         gap:10
-
+    },
+    ContactHead:{
+      flexDirection:"row",
+      justifyContent:"center",
+       alignItems:"center",
+       gap:5
     }
 
 })

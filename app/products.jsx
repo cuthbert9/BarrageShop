@@ -8,6 +8,8 @@ import { ScrollView } from 'react-native-gesture-handler'
 import { FlatList } from 'react-native'
 import shouseList from '@/constants/NikesList'
 import NikeImages from '@/constants/NikesImages'
+import Ionicons from '@expo/vector-icons/Ionicons';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 const products = () => {
 
@@ -43,10 +45,15 @@ const products = () => {
                             <Text style={styles.shouTitle}>{item.name}</Text>
 
                             <View style={styles.subHeadin} >
+                                <View  style={styles.priceCont}>
+                                <Ionicons name="pricetag" size={24} color="white" />
+
                                 <Text style={styles.shouTitle}>{item.price}$</Text>
+                                </View>
+                                <View style={styles.priceCont}>
+                                <FontAwesome name="calendar" size={24} color="white" />                                    
                                 <Text style={styles.shouTitle}>{item.releaseYear}</Text>
-
-
+                                </View>
                             </View>
                         </View>
 
@@ -108,6 +115,12 @@ const createStylesheet = (theme, colorTheme) => {
             flexDirection: "row",
             margin: "auto",
             gap: 30
+        },
+        priceCont:{
+            flexDirection:"row",
+            gap:10,
+            marginVertical:10
+
         }
     })
 }
